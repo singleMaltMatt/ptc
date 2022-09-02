@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Pokemon Type Chart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1>
+  Pokemon Type Chart</h1>
+<div id="app">
+  <table class="table table-sm table-bordered">
+    <thead>
+      <tr>
+        <th>Types</th>
+        <th v-for="(type,typeName) in types" :class="getTypeClass(typeName)"> {{typeName}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(type,typeName) in types">
+        <th :class="getTypeClass(typeName)">{{typeName}}</th>
+        <td v-for="(vsTypeEff,vsTypeName) in type" :class="getEffClass(vsTypeEff)">{{vsTypeEff}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
